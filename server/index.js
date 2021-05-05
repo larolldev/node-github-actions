@@ -36,10 +36,9 @@ setInterval(() => {
     .then(console.log)
     .catch(e => console.log(e))
   i++
-}, 1000 * 60 * 20)
+}, 60000)
 
-function announce () {
-}
+function announce () {}
 
 app.get('/', function (req, res) {
   i++
