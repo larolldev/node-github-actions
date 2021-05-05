@@ -1,60 +1,8 @@
 const express = require('express')
 const Pusher = require('pusher')
-const PushNotifications = require('@pusher/push-notifications-server')
 // const generateVotes = require("./votegenerator");
 const cors = require('cors')
 const PORT = process.env.PORT || 3001
-const mySampleRegions = [
-  {
-    regionname: '1',
-    population: 2189499,
-    turnoutpercent: 51,
-    totalvotes: 1116644,
-    currentvotes: 0
-  },
-  {
-    regionname: '2',
-    population: 2189499,
-    turnoutpercent: 51,
-    totalvotes: 1116644,
-    currentvotes: 0
-  },
-  {
-    regionname: '3',
-    population: 2189499,
-    turnoutpercent: 51,
-    totalvotes: 1116644,
-    currentvotes: 0
-  },
-  {
-    regionname: '4',
-    population: 2189499,
-    turnoutpercent: 51,
-    totalvotes: 1116644,
-    currentvotes: 0
-  },
-  {
-    regionname: '5',
-    population: 2189499,
-    turnoutpercent: 51,
-    totalvotes: 1116644,
-    currentvotes: 0
-  },
-  {
-    regionname: '6',
-    population: 2189499,
-    turnoutpercent: 51,
-    totalvotes: 1116644,
-    currentvotes: 0
-  },
-  {
-    regionname: '7',
-    population: 2189499,
-    turnoutpercent: 51,
-    totalvotes: 1116644,
-    currentvotes: 0
-  }
-]
 const sampleData = [
   [1, 'Alabama', 52, 4, 19, 10, 52, 4, 19, 10, 'inprogress', 0],
   [1, 'Delaware', 15, 6, 10, 12, 67, 10, 29, 22, 'inprogress', 1],
@@ -63,14 +11,7 @@ const sampleData = [
   [1, 'Idaho', 4, 16, 8, 21, 131, 46, 48, 71, 'inprogress', 4],
   [1, 'Kentucky', 12, 36, 8, 22, 143, 82, 56, 93, 'completed', 5]
 ]
-const allRegions = [
-  'Alabama',
-  'Delaware',
-  'Florida',
-  'Hawaii',
-  'Idaho',
-  'Kentucky'
-]
+
 const app = express()
 app.use(cors())
 const pusher = new Pusher({
