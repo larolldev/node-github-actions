@@ -1,16 +1,13 @@
-// importing express framework
-const express = require('express')
+const Pusher = require('pusher')
 
-const app = express()
-
-// Respond with "hello world" for requests that hit our root "/"
-app.get('/', function (req, res) {
-  return res.send('Hello World UPDATED')
+const pusher = new Pusher({
+  appId: '1194179',
+  key: 'd426de2ce4b4a63e74b6',
+  secret: '110814cc70f09c03b206',
+  cluster: 'ap1',
+  useTLS: true
 })
 
-// listen to port 7000 by default
-app.listen(process.env.PORT || 7000, () => {
-  console.log('Server is running')
+pusher.trigger('my-channel', 'my-event', {
+  message: 'hello world'
 })
-
-module.exports = app
