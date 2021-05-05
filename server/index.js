@@ -27,7 +27,7 @@ var i = 0
 setInterval(() => {
   if (i === 5) {
     i = 0
-    announce()
+    return
   }
   pusher
     .trigger('votes', 'vote-event', {
@@ -37,8 +37,6 @@ setInterval(() => {
     .catch(e => console.log(e))
   i++
 }, 60000)
-
-function announce () {}
 
 app.get('/', function (req, res) {
   i++
