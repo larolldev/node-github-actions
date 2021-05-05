@@ -27,6 +27,7 @@ var i = 0
 setInterval(() => {
   if (i === 5) {
     i = 0
+    console.log('DONE')
     return
   }
   pusher
