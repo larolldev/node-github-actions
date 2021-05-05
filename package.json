@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/larolldev/node-github-actions#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pusher": "^5.0.0"
   },
   "devDependencies": {
     "mocha": "^8.3.2",
